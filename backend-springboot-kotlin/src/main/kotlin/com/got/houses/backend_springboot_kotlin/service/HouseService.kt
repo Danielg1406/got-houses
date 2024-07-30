@@ -12,7 +12,7 @@ class HouseService{
 
     fun searchHouses(query: String): List<House> {
         val response = restTemplate.getForObject<Array<House>>("$apiUrl?name-$query")
-        return response?.toList() ?: emptyList()
+        return response.toList()
     }
 
     fun getHouseDetails(id: Long): House? {
