@@ -10,9 +10,16 @@ class HouseService{
     private val restTemplate = RestTemplate()
     private val apiUrl = "https://anapioficeandfire.com/api/houses"
 
-    fun searchHouses(query: String): List<House> {
-        val response = restTemplate.getForObject<Array<House>>("$apiUrl?name-$query")
-        return response.toList()
+    fun getAllHouses(): List<House> {
+        var page = 1
+        val houses = mutableListOf<House>()
+        while (true) {
+            val response = restTemplate.getForObject<Array<House>>("$apiUrl?page=$page&pageSize=50")
+            if (response.isEmpty()) break
+            houses.addAll(response)
+            page++
+        }
+        return houses
     }
 
     fun getHouseDetails(id: Long): House? {

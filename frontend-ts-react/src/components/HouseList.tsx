@@ -1,13 +1,36 @@
-import React, { useState } from 'react';
-import { searchHouses } from '../services/houseService';
+import React, { useEffect, useState } from 'react';
+import { getAllHouses } from '../services/houseService';
 
 const HouseList: React.FC = () => {
     const [query, setQuery] = useState('');
-    const [houses, setHouses] = useState([]);
+    const [houses, setHouses] = useState<any[]>([]);
+    const [filteredHouses, setFilteredHouses] = useState<any[]>([]);
 
-    const handleSearch = async () => {
-        const result = await searchHouses(query);
-        setHouses(result);
+    useEffect(() => {
+        const fetchHouses = async () => {
+            const allHouses = await getAllHouses();
+            setHouses(allHouses);
+        };
+
+        fetchHouses().catch((error) => {
+            console.error('Error during fetchHouseDetails call:', error);
+        });
+    }, []);
+
+    useEffect(() => {
+        if (query) {
+            setFilteredHouses(
+                houses.filter(house =>
+                    house.name.toLowerCase().includes(query.toLowerCase())
+                )
+            );
+        } else {
+            setFilteredHouses([]);
+        }
+    }, [query, houses]);
+
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(e.target.value);
     };
 
     return (
@@ -15,12 +38,11 @@ const HouseList: React.FC = () => {
             <input
                 type="text"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={handleSearch}
                 placeholder="Search for houses..."
             />
-            <button onClick={handleSearch}>Search</button>
             <ul>
-                {houses.map((house: any) => (
+                {filteredHouses.map(house => (
                     <li key={house.url}>
                         <a href={`/houses/${house.url.split('/').pop()}`}>{house.name}</a>
                     </li>

@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = "http://localhost:8080"
 
-export const searchHouses = async (query: string) => {
-    const response = await axios.get(`${BASE_URL}/houses?query=${query}`);
+export const getAllHouses = async () => {
+    const response = await axios.get(`${BASE_URL}/houses`);
     return response.data;
 };
 
