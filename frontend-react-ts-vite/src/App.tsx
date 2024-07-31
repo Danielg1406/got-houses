@@ -4,14 +4,14 @@ import HouseList from './components/HouseList';
 import HouseDetails from './components/HouseDetails';
 
 const App: React.FC = () => {
-  return (
-      <Router>
-        <Routes>
-          <Route path="/houses/:id" element={<HouseDetails />} />
-          <Route path="/" element={<HouseList />} />
-        </Routes>
-      </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/houses/:id" element={<HouseDetails />} />
+                <Route path="/" element={<HouseList />} />
+            </Routes>
+        </Router>
+    );
 };
 
 export default App;
