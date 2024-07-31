@@ -1,36 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { getAllHouses } from '../services/houseService';
+import React, { useState } from 'react';
+import { searchHouses } from '../services/houseService';
 
 const HouseList: React.FC = () => {
     const [query, setQuery] = useState('');
     const [houses, setHouses] = useState<any[]>([]);
-    const [filteredHouses, setFilteredHouses] = useState<any[]>([]);
 
-    useEffect(() => {
-        const fetchHouses = async () => {
-            const allHouses = await getAllHouses();
-            setHouses(allHouses);
-        };
-
-        fetchHouses().catch((error) => {
-            console.error('Error during fetchHouseDetails call:', error);
-        });
-    }, []);
-
-    useEffect(() => {
-        if (query) {
-            setFilteredHouses(
-                houses.filter(house =>
-                    house.name.toLowerCase().includes(query.toLowerCase())
-                )
-            );
+    const handleSearch = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setQuery(value);
+        if (value) {
+            const result = await searchHouses(value);
+            setHouses(result);
         } else {
-            setFilteredHouses([]);
+            setHouses([]);
         }
-    }, [query, houses]);
-
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(e.target.value);
     };
 
     return (
@@ -41,13 +24,15 @@ const HouseList: React.FC = () => {
                 onChange={handleSearch}
                 placeholder="Search for houses..."
             />
-            <ul>
-                {filteredHouses.map(house => (
-                    <li key={house.url}>
-                        <a href={`/houses/${house.url.split('/').pop()}`}>{house.name}</a>
-                    </li>
-                ))}
-            </ul>
+            {query && (
+                <ul>
+                    {houses.map(house => (
+                        <li key={house.url}>
+                            <a href={`/houses/${house.url.split('/').pop()}`}>{house.name}</a>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 };

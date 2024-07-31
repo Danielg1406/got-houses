@@ -10,7 +10,7 @@ class HouseService{
     private val restTemplate = RestTemplate()
     private val apiUrl = "https://anapioficeandfire.com/api/houses"
 
-    fun getAllHouses(): List<House> {
+    fun searchHouses(query: String): List<House> {
         var page = 1
         val houses = mutableListOf<House>()
         while (true) {
@@ -19,7 +19,7 @@ class HouseService{
             houses.addAll(response)
             page++
         }
-        return houses
+        return houses.filter { it.name.contains(query, ignoreCase = true) }
     }
 
     fun getHouseDetails(id: Long): House? {
