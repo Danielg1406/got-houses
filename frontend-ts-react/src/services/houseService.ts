@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://localhost:8080';
+
 export const searchHouses = async (query: string) => {
-    const response = await axios.get(`/houses?query=${query}`);
+    const response = await axios.get(`${BASE_URL}/houses?query=${query}`);
     return response.data;
 };
 
 export const getHouseDetails = async (id: number) => {
-    const response = await axios.get(`/houses/${id}`);
+    const response = await axios.get(`${BASE_URL}/houses/${id}`);
     return response.data;
 };
