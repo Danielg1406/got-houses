@@ -27,14 +27,24 @@ const HouseList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black flex flex-col justify-center items-center text-white">
-      <h1 className="text-5xl font-bold mb-8">Game of Thrones Houses</h1>
+      <h1 className="text-5xl font-got mb-8">Game of Thrones Houses</h1>
       <PlaceholdersAndVanishInput
-        placeholders={["Search...", "Type here..."]}
+        placeholders={[
+          "Enter the name of a house...",
+          "House Targaryen of King's Landing",
+          "House Stark of Winterfell",
+          "House Lannister of Casterly Rock",
+          "House Baratheon of King's Landing",
+          "House Tyrell of Highgarden",
+          "House Arryn of the Eyrie",
+          "House Tully of Riverrun",
+          "House Greyjoy of Pyke",
+        ]}
         onChange={handleInputChange}
         onSubmit={handleFormSubmit}
       />
       {query && (
-        <ul className="mt-4">
+        <ul className="mt-4 font-serif">
           {houses.map((house) => (
             <li key={house.url}>
               <a
