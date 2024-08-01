@@ -26,8 +26,10 @@ const HouseList: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col justify-center items-center text-white">
-      <h1 className="text-5xl font-got mb-8">Game of Thrones Houses</h1>
+    <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-white">
+      <h1 className="text-8xl text-center text-pretty font-trajan mb-8">
+        Game of Thrones Houses
+      </h1>
       <PlaceholdersAndVanishInput
         placeholders={[
           "Enter the name of a house...",

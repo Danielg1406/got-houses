@@ -7,8 +7,13 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        home: "url(./src/assets/images/dragon-eye.webp)",
+      },
       fontFamily: {
-        got: ["Game of Thrones"],
+        got: ["Game of Thrones", "serif"],
+        trajan: ["trajan-pro-3", "serif"],
+        merri: ["Merriweather", "serif"],
       },
     },
   },
