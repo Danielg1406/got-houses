@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { searchHouses } from "../services/houseService";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
+import HouseCard from "./ui/HouseCard";
 
 const HouseList: React.FC = () => {
   const [query, setQuery] = useState("");
@@ -27,10 +28,13 @@ const HouseList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center">
-      <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-t from-black to-100% p-5">
-        <h1 className="text-3xl text-center text-pretty font-got mb-8 text-slate-50">
-          Game of Thrones Houses
-        </h1>
+      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-black to-100% p-5">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-3xl text-center text-pretty font-got mb-2 text-slate-50">
+            Game of Thrones
+          </h1>
+          <h2 className="text-xl text-slate-50 font-got">House Wiki</h2>
+        </div>
         <form onSubmit={handleFormSubmit} className="w-full max-w-md shadow-lg">
           <HoverBorderGradient
             containerClassName="w-full"
@@ -51,20 +55,11 @@ const HouseList: React.FC = () => {
           </button>
         </form>
         {query && (
-          <div className="mt-4 w-full max-w-md max-h-96 overflow-y-auto bg-white/10 p-4 rounded-lg">
-            <ul
-              className="font-merri"
-              aria-label="list with the result of the search"
-            >
+          <div className="mt-4 w-full max-w-md max-h-40 overflow-y-auto rounded">
+            {/* TODO: Solve the problem of why it says list with 0 items in the screen reader*/}
+            <ul role="list" className="font-merri">
               {houses.map((house) => (
-                <li key={house.url}>
-                  <a
-                    href={`/houses/${house.url.split("/").pop()}`}
-                    className="text-xl text-white hover:underline"
-                  >
-                    {house.name}
-                  </a>
-                </li>
+                <HouseCard key={house.url} name={house.name} url={house.url} />
               ))}
             </ul>
           </div>
