@@ -28,7 +28,7 @@ const HouseList: React.FC = () => {
   return (
     <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center">
       <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-t from-black to-100% p-5">
-        <h1 className="text-3xl text-center text-pretty font-trajan mb-8 text-slate-50">
+        <h1 className="text-3xl text-center text-pretty font-got mb-8 text-slate-50">
           Game of Thrones Houses
         </h1>
         <form onSubmit={handleFormSubmit} className="w-full max-w-md shadow-lg">
