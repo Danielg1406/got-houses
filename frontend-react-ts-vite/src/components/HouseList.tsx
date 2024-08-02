@@ -32,29 +32,42 @@ const HouseList: React.FC = () => {
           Game of Thrones Houses
         </h1>
         <form onSubmit={handleFormSubmit} className="w-full max-w-md shadow-lg">
-          <HoverBorderGradient containerClassName="w-full">
+          <HoverBorderGradient
+            containerClassName="w-full"
+            aria-label="search box"
+          >
             <input
+              id="house-search"
               type="text"
               value={query}
+              aria-label="Enter the name of a house"
               onChange={handleInputChange}
               placeholder="Enter the name of a house..."
               className="w-full h-14 bg-inherit text-slate-50 p-2 rounded focus:outline-none"
             />
           </HoverBorderGradient>
+          <button type="submit" className="sr-only">
+            Submit
+          </button>
         </form>
         {query && (
-          <ul className="mt-4 font-serif">
-            {houses.map((house) => (
-              <li key={house.url}>
-                <a
-                  href={`/houses/${house.url.split("/").pop()}`}
-                  className="text-xl text-white hover:underline"
-                >
-                  {house.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-4 w-full max-w-md max-h-96 overflow-y-auto bg-white/10 p-4 rounded-lg">
+            <ul
+              className="font-merri"
+              aria-label="list with the result of the search"
+            >
+              {houses.map((house) => (
+                <li key={house.url}>
+                  <a
+                    href={`/houses/${house.url.split("/").pop()}`}
+                    className="text-xl text-white hover:underline"
+                  >
+                    {house.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </div>
