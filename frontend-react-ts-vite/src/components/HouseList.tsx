@@ -29,7 +29,7 @@ const HouseList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center relative">
-      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-[#130606] to-100% p-5 z-10 relative">
+      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-[#1f0a0a] to-100% p-7 sm:p-12 z-10 relative">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center text-pretty font-got text-slate-50">
             Game of Thrones
@@ -38,7 +38,7 @@ const HouseList: React.FC = () => {
             House Wiki
           </h2>
         </div>
-        <form onSubmit={handleFormSubmit} className="w-full max-w-md">
+        <form onSubmit={handleFormSubmit} className="w-full max-w-screen-md">
           <HoverBorderGradient
             containerClassName="w-full"
             aria-label="search box"
@@ -50,7 +50,7 @@ const HouseList: React.FC = () => {
               aria-label="Enter the name of a house"
               onChange={handleInputChange}
               placeholder="Enter the name of a house..."
-              className="w-full h-14 bg-inherit text-slate-50 p-2 rounded focus:outline-none"
+              className="w-full h-14 bg-inherit text-slate-50 px-5 rounded focus:outline-none"
             />
           </HoverBorderGradient>
           <button type="submit" className="sr-only">
@@ -58,7 +58,7 @@ const HouseList: React.FC = () => {
           </button>
         </form>
         {query && (
-          <div className="mt-4 w-full max-w-md max-h-40 overflow-y-auto rounded">
+          <div className="mt-4 w-full max-w-screen-md max-h-36 overflow-y-auto rounded">
             <ul
               role="list"
               className="font-merri"
