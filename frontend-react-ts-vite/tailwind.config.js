@@ -8,12 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        home: "url('/src/assets/images/dragon-eye.webp')",
+        home: "url('/dragon-eye.webp')",
       },
       fontFamily: {
-        cinzel: ["Cinzel Decorative", "serif"],
-        merri: ["Merriweather", "serif"],
-        trajan: ["Trajan Pro Regular", "serif"],
         got: ["Game of Thrones", "serif"],
       },
     },

@@ -2,32 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Merriweather";
-  src: url("./assets/fonts/Merriweather-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cinzel Decorative";
-  src: url("./assets/fonts/CinzelDecorative-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Trajan Pro Regular";
-  src: url("./assets/fonts/TrajanPro-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Game of Thrones";
-  src: url("./assets/fonts/GameofThrones.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+@layer base {
+  @font-face {
+    font-family: "Game of Thrones";
+    src: url("/fonts/GameofThrones.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0025-00FF;
+  }
 }
 
 :root {

@@ -34,7 +34,7 @@ const HouseList: React.FC = () => {
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text- text-center text-pretty font-got text-slate-50">
             Game of Thrones
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-50 font-merri">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-50 font-got">
             House Wiki
           </h2>
         </div>
@@ -50,7 +50,7 @@ const HouseList: React.FC = () => {
               aria-label="Enter the name of a house"
               onChange={handleInputChange}
               placeholder="Enter the name of a house..."
-              className="w-full h-14 lg:h-20 font-merri text-md md:text-xl lg:text-xl bg-inherit text-slate-50 px-5 rounded focus:outline-none"
+              className="w-full h-14 lg:h-20 font-serif text-md md:text-xl lg:text-xl bg-inherit text-slate-50 px-5 rounded focus:outline-none"
             />
           </HoverBorderGradient>
           <button type="submit" className="sr-only">
@@ -61,7 +61,7 @@ const HouseList: React.FC = () => {
           <div className="mt-4 w-full max-w-screen-md max-h-36 overflow-y-auto rounded">
             <ul
               role="list"
-              className="font-merri"
+              className="font-serif"
               aria-label="list with the search result"
             >
               {houses.map((house) => (
@@ -75,8 +75,8 @@ const HouseList: React.FC = () => {
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.8}
-          maxSize={1.4}
+          minSize={1.4}
+          maxSize={1.8}
           particleDensity={400}
           className="w-full h-full"
           particleColor="#FF4400"
