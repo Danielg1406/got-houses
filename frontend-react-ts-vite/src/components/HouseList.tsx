@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { searchHouses } from "../services/houseService";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import HouseCard from "./ui/HouseCard";
-import { SparklesCore } from "./ui/FireSparkles";
 
 const HouseList: React.FC = () => {
   const [query, setQuery] = useState("");
@@ -29,7 +28,7 @@ const HouseList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center relative">
-      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-[#1f0a0a] to-100% p-7 sm:p-12 z-10 relative">
+      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-[#000000] to-100% p-7 sm:p-12 z-10 relative">
         <div className="flex flex-col justify-center items-center w-full h-full py-4">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text- text-center text-pretty font-got text-slate-50">
             Game of Thrones
@@ -70,17 +69,6 @@ const HouseList: React.FC = () => {
             </ul>
           </div>
         )}
-      </div>
-      <div className="absolute bottom-0 w-full h-1/2 pointer-events-none z-0">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={1.4}
-          maxSize={1.8}
-          particleDensity={400}
-          className="w-full h-full"
-          particleColor="#FF4400"
-        />
       </div>
     </div>
   );
