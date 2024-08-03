@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getHouseDetails } from "../services/houseService";
+import HouseInfoSection from "./HouseInfoSection";
+import CoatOfArmsImage from "./CoatOfArmsImage";
+import { SparklesCore } from "./ui/FireSparkles";
+import HouseName from "./HouseName";
 
 const HouseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,21 +22,19 @@ const HouseDetails: React.FC = () => {
   if (!house) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center text-black p-8">
-      <h1 className="text-4xl font-bold mb-4">{house.name}</h1>
-      <p className="mb-2">
-        <strong>Region:</strong> {house.region}
-      </p>
-      <p className="mb-2">
-        <strong>Coat of Arms:</strong> {house.coatOfArms}
-      </p>
-      <p className="mb-2">
-        <strong>Words:</strong> {house.words}
-      </p>
-      <p className="mb-2">
-        <strong>Titles:</strong> {house.titles.join(", ")}
-      </p>
-      {/* Add more fields as necessary */}
+    <div className="min-h-screen bg-[#181818] flex flex-col items-center text-slate-50 p-8">
+      <HouseName name={house.name} word={house.words} />
+      <div className="absolute bottom-0 w-full h-1/2 pointer-events-none z-0">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={1.4}
+          maxSize={1.8}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FF4400"
+        />
+      </div>
       <a href="/" className="mt-8 text-blue-500 hover:underline">
         Back to search
       </a>
