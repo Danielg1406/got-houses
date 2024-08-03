@@ -27,7 +27,7 @@ const HouseInfoSection: React.FC<HouseInfoSectionProps> = ({
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           src="/got-map.webp"
           alt="map of game of thrones showing all the regions"
-          className="z-10 rounded border border-gray-700 shadow-[0_5px_60px_5px_rgba(240,240,240,0.1)]"
+          className="z-10 rounded border border-neutral-700 shadow-[0_5px_60px_5px_rgba(240,240,240,0.1)]"
         />
         <p className="font-serif text-sm italic text-center text-gray-400">
           {region}
