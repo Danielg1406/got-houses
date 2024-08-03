@@ -3,13 +3,29 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Game of Thrones";
-  src: url("./assets/fonts/GameOfThrones.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-
   font-family: "Merriweather";
   src: url("./assets/fonts/Merriweather-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("./assets/fonts/CinzelDecorative-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Trajan Pro Regular";
+  src: url("./assets/fonts/TrajanPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Game of Thrones";
+  src: url("./assets/fonts/GameofThrones.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

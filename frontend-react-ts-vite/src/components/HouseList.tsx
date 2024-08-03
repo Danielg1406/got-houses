@@ -31,10 +31,10 @@ const HouseList: React.FC = () => {
     <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center relative">
       <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-[#1f0a0a] to-100% p-7 sm:p-12 z-10 relative">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center text-pretty font-got text-slate-50">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text- text-center text-pretty font-got text-slate-50">
             Game of Thrones
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-50 font-got">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-50 font-merri">
             House Wiki
           </h2>
         </div>
@@ -50,7 +50,7 @@ const HouseList: React.FC = () => {
               aria-label="Enter the name of a house"
               onChange={handleInputChange}
               placeholder="Enter the name of a house..."
-              className="w-full h-14 bg-inherit text-slate-50 px-5 rounded focus:outline-none"
+              className="w-full h-14 lg:h-20 font-merri text-md md:text-xl lg:text-xl bg-inherit text-slate-50 px-5 rounded focus:outline-none"
             />
           </HoverBorderGradient>
           <button type="submit" className="sr-only">

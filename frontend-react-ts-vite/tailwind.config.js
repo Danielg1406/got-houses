@@ -11,8 +11,10 @@ module.exports = {
         home: "url('/src/assets/images/dragon-eye.webp')",
       },
       fontFamily: {
-        got: ["Game of Thrones", "serif"],
+        cinzel: ["Cinzel Decorative", "serif"],
         merri: ["Merriweather", "serif"],
+        trajan: ["Trajan Pro Regular", "serif"],
+        got: ["Game of Thrones", "serif"],
       },
     },
   },
