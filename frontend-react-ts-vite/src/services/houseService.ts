@@ -1,15 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'http://localhost:8080';
+const api = axios.create({
+  baseURL: "/api",
+});
 
 export const searchHouses = async (query: string) => {
-    const response = await axios.get(`${BASE_URL}/houses`, {
-        params: { query }
-    });
-    return response.data;
+  const response = await api.get(`/houses?query=${query}`);
+  return response.data;
 };
 
 export const getHouseDetails = async (id: number) => {
-    const response = await axios.get(`${BASE_URL}/houses/${id}`);
-    return response.data;
+  const response = await api.get(`/houses/${id}`);
+  return response.data;
 };
