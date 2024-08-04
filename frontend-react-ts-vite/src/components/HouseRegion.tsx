@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-interface HouseInfoSectionProps {
+interface HouseRegionProps {
   region: string;
 }
 
-const HouseInfoSection: React.FC<HouseInfoSectionProps> = ({ region }) => {
+const HouseRegion: React.FC<HouseRegionProps> = ({ region }) => {
   return (
     <div className="flex flex-col px-8 pt-20 pb-10 w-full bg-[#181818] z-10">
       <div className="flex flex-col">
@@ -13,7 +13,7 @@ const HouseInfoSection: React.FC<HouseInfoSectionProps> = ({ region }) => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="max-w-7xl text-xl md:text-5xl font-bold text-neutral-200 font-got mb-8"
+          className="max-w-7xl text-xl md:text-5xl text-neutral-200 font-got mb-8"
         >
           Region
         </motion.h2>
@@ -33,4 +33,4 @@ const HouseInfoSection: React.FC<HouseInfoSectionProps> = ({ region }) => {
   );
 };
 
-export default HouseInfoSection;
+export default HouseRegion;

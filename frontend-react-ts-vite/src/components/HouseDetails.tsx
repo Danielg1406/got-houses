@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getHouseDetails } from "../services/houseService";
-import HouseInfoSection from "./HouseInfoSection";
+import HouseRegion from "./HouseRegion";
 import { SparklesCore } from "./ui/FireSparkles";
 import HouseName from "./HouseName";
 import HouseMembers from "./HouseMembers";
@@ -26,7 +26,7 @@ const HouseDetails: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#181818] flex flex-col items-center text-slate-50 py-8 overflow-hidden">
       <HouseName name={house.name} word={house.words} />
-      <HouseInfoSection region={house.region} />
+      <HouseRegion region={house.region} />
       <HouseLeadership currentLord={house.currentLord} heir={house.heir} />
       <HouseMembers swornMembers={house.swornMembers} />
       <InfoTable infoDetails={house} />

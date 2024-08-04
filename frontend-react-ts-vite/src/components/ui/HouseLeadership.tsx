@@ -45,7 +45,7 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
 
   const lordName = lord?.name || "N/A";
   const heirName = heirCharacter?.name || "N/A";
-  const lordImage = currentLord ? "/brand.webp" : "/unknown.webp";
+  const lordImage = currentLord ? "/lord.webp" : "/unknown.webp";
   const heirImage = heir ? "/brand.webp" : "/unknown.webp";
 
   return (
@@ -56,7 +56,7 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
         className="absolute mx-auto align-center z-2 opacity-20"
       />
       <div className="flex flex-col z-10">
-        <h2 className="max-w-7xl text-xl text-left md:text-5xl font-bold text-neutral-200 font-got mb-8">
+        <h2 className="max-w-7xl text-xl text-left md:text-5xl text-neutral-200 font-got mb-8">
           Leadership
         </h2>
         <div className="flex flex-col items-center">

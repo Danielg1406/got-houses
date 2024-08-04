@@ -67,7 +67,7 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
 
   return (
     <div className="w-full h-full px-8 py-10 bg-[#181818] z-10">
-      <h2 className="max-w-7xl text-xl md:text-5xl font-bold text-neutral-200 font-got">
+      <h2 className="max-w-7xl text-xl md:text-5xl text-neutral-200 font-got">
         Sworn Members
       </h2>
       <Carousel items={cards} />
