@@ -25,4 +25,8 @@ class HouseService{
     fun getHouseDetails(id: Long): House? {
         return restTemplate.getForObject("$apiUrl/$id")
     }
+
+    fun getCharacterDetails(id: Long) Character? {
+        return restTemplate.getForObject("apiUrl/$id")
+    }
 }
