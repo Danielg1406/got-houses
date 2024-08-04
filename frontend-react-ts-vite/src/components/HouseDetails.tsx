@@ -5,6 +5,7 @@ import HouseInfoSection from "./HouseInfoSection";
 import { SparklesCore } from "./ui/FireSparkles";
 import HouseName from "./HouseName";
 import HouseMembers from "./HouseMembers";
+import InfoTable from "./InfoTable";
 
 const HouseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,13 +27,14 @@ const HouseDetails: React.FC = () => {
       <HouseName name={house.name} word={house.words} />
       <HouseInfoSection region={house.region} coatArms={house.coatOfArms} />
       <HouseMembers swornMembers={house.swornMembers} />
+      <InfoTable infoDetails={house} />
       <div className="absolute bottom-0 w-full h-1/2 pointer-events-none z-0">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
           minSize={1.4}
           maxSize={1.8}
-          particleDensity={15}
+          particleDensity={20}
           className="w-full h-full"
           particleColor="#7F1D1D"
         />
