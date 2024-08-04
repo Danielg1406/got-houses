@@ -37,7 +37,7 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="text-gray-100 opacity-0"
+              className="text-neutral-400 opacity-0"
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
