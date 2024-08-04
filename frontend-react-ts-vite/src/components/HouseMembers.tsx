@@ -11,6 +11,7 @@ interface Character {
   name: string;
   born: string;
   died: string;
+  gender: string;
   url: string;
   titles: string[];
 }
@@ -43,8 +44,20 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
         category: character.titles.join(", "),
         content: (
           <>
-            <p className="text-neutral-200">Born: {character.born}</p>
-            <p className="text-neutral-200">Died: {character.died}</p>
+            <p className="text-neutral-200">
+              <span className="font-got text-sm text-neutral-400">Born: </span>
+              {character.born || "Unknown"}
+            </p>
+            <p className="text-neutral-200">
+              <span className="font-got text-sm text-neutral-400">Died: </span>
+              {character.died || "Unknown"}
+            </p>
+            <p className="text-neutral-200">
+              <span className="font-got text-sm text-neutral-400">
+                Gender:{" "}
+              </span>
+              {character.gender || "Unknown"}
+            </p>
           </>
         ),
       }}
@@ -53,8 +66,8 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
   ));
 
   return (
-    <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl mx-auto text-xl md:text-5xl font-bold text-neutral-200 font-got">
+    <div className="w-full h-full px-8 py-10 bg-[#181818] z-10">
+      <h2 className="max-w-7xl text-xl md:text-5xl font-bold text-neutral-200 font-got">
         Sworn Members
       </h2>
       <Carousel items={cards} />

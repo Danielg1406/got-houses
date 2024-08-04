@@ -9,7 +9,7 @@ type CardProps = {
   card: {
     src: string;
     title: string;
-    category: string;
+    category?: string;
     content: React.ReactNode;
   };
   index: number;
@@ -76,7 +76,7 @@ export const Card: React.FC<CardProps> = ({ card, index, layout = false }) => {
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-serif font-medium text-neutral-500"
+                className="text-base font-serif font-medium text-neutral-400"
               >
                 {card.category}
               </motion.p>
@@ -99,14 +99,8 @@ export const Card: React.FC<CardProps> = ({ card, index, layout = false }) => {
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
           <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-sm md:text-base font-medium font-serif text-left"
-          >
-            {card.category}
-          </motion.p>
-          <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-lg md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-serif"
+            className="text-neutral-100 text-md md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-serif"
           >
             {card.title}
           </motion.p>

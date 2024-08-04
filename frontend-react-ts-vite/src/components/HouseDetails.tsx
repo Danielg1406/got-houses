@@ -23,9 +23,9 @@ const HouseDetails: React.FC = () => {
   if (!house) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-[#181818] flex flex-col items-center text-slate-50 p-8 overflow-hidden">
+    <div className="min-h-screen bg-[#181818] flex flex-col items-center text-slate-50 py-8 overflow-hidden">
       <HouseName name={house.name} word={house.words} />
-      <HouseInfoSection region={house.region} coatArms={house.coatOfArms} />
+      <HouseInfoSection region={house.region} />
       <HouseMembers swornMembers={house.swornMembers} />
       <InfoTable infoDetails={house} />
       <div className="absolute bottom-0 w-full h-1/2 pointer-events-none z-0">
@@ -39,13 +39,15 @@ const HouseDetails: React.FC = () => {
           particleColor="#7F1D1D"
         />
       </div>
-      <a
-        href="/"
-        className="px-8 py-2 rounded-full relative bg-transparent text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-neutral-700"
-      >
-        <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-red-500 to-transparent" />
-        <span className="relative z-20">Back to search</span>
-      </a>
+      <div className="z-10 bg-[#181818] w-full flex justify-center pb-8">
+        <a
+          href="/"
+          className="px-8 py-2 rounded relative bg-transparent text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-neutral-600"
+        >
+          <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-red-500 to-transparent" />
+          <span className="relative z-20">Back to search</span>
+        </a>
+      </div>
     </div>
   );
 };
