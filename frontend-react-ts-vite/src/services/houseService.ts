@@ -13,3 +13,8 @@ export const getHouseDetails = async (id: number) => {
   const response = await api.get(`/houses/${id}`);
   return response.data;
 };
+
+export const getCharacterDetails = async (id: number) => {
+  const response = await api.get(`/characters/${id}`);
+  return response.data;
+};
