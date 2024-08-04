@@ -72,20 +72,20 @@ export const Card: React.FC<CardProps> = ({ card, index, layout = false }) => {
                 className="sticky top-4 h-6 w-6 right-0 ml-auto bg-neutral-200 rounded flex items-center justify-center"
                 onClick={handleClose}
               >
-                <IconX className="h-6 w-6 text-neutral-600" />
+                <IconX className="h-6 w-6 text-neutral-700" />
               </button>
-              <motion.p
-                layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-serif font-medium text-neutral-400"
-              >
-                {card.category}
-              </motion.p>
-              <motion.p
+              <motion.h3
                 layoutId={layout ? `title-${card.title}` : undefined}
                 className="text-2xl md:text-5xl font-semibold font-got text-neutral-200 mt-1"
               >
                 {card.title}
-              </motion.p>
+              </motion.h3>
+              <motion.h4
+                layoutId={layout ? `category-${card.title}` : undefined}
+                className="text-base font-serif font-medium text-neutral-400"
+              >
+                {card.category}
+              </motion.h4>
               <div className="py-10">{card.content}</div>
             </motion.div>
           </div>
@@ -98,16 +98,16 @@ export const Card: React.FC<CardProps> = ({ card, index, layout = false }) => {
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
-          <motion.p
+          <motion.h3
             layoutId={layout ? `title-${card.title}` : undefined}
             className="text-neutral-100 text-md md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-serif"
           >
             {card.title}
-          </motion.p>
+          </motion.h3>
         </div>
         <BlurImage
           src={card.src}
-          alt={card.title}
+          alt={`black and white portrait picture of ${card.title}`}
           className="object-cover absolute z-10 inset-0"
         />
       </motion.button>
@@ -136,7 +136,7 @@ export const BlurImage = ({
       width={width}
       height={height}
       loading="lazy"
-      alt={alt ? alt : "Background of a beautiful view"}
+      alt={alt}
       {...rest}
     />
   );

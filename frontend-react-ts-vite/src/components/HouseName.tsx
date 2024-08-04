@@ -11,7 +11,7 @@ const HouseName: React.FC<HouseNameProps> = ({ name, word }) => {
     <div className="flex flex-col justify-center items-center min-h-screen w-full">
       <img
         src="/sigil.webp"
-        alt="sigil of the house"
+        alt="sigil of the house - three headed iron dragon"
         className="opacity-10 fixed"
       />
       <h1 className="font-got text-2xl text-center text-neutral-300">{name}</h1>
