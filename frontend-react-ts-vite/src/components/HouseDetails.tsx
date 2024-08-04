@@ -37,8 +37,12 @@ const HouseDetails: React.FC = () => {
           particleColor="#7F1D1D"
         />
       </div>
-      <a href="/" className="mt-8 text-blue-500 hover:underline">
-        Back to search
+      <a
+        href="/"
+        className="px-8 py-2 rounded-full relative bg-transparent text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-neutral-700"
+      >
+        <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-red-500 to-transparent" />
+        <span className="relative z-20">Back to search</span>
       </a>
     </div>
   );
