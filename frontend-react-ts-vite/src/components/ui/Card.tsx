@@ -82,7 +82,7 @@ export const Card: React.FC<CardProps> = ({ card, index, layout = false }) => {
               </motion.h3>
               <motion.h4
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-serif font-medium text-neutral-400"
+                className="md:text-lg 2xl:text-xl font-serif font-medium text-neutral-500"
               >
                 {card.category}
               </motion.h4>
@@ -94,7 +94,7 @@ export const Card: React.FC<CardProps> = ({ card, index, layout = false }) => {
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded border border-neutral-700 shadow-[0_5px_6px_0px_rgba(240,240,240,0.1)] bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded border border-neutral-700 shadow-[0_5px_6px_0px_rgba(240,240,240,0.1)] bg-neutral-900 h-80 w-56 md:h-[35rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">

@@ -32,7 +32,9 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
       setCharacters(characterData);
     };
 
-    fetchData();
+    fetchData().catch((error) => {
+        console.error('Error during fetchHouseDetails call:', error);
+    });
   }, [swornMembers]);
 
   const cards = characters.map((character, index) => (
@@ -43,22 +45,22 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
         title: character.name,
         category: character.titles.join(", "),
         content: (
-          <>
-            <p className="text-neutral-200">
-              <span className="font-got text-sm text-neutral-400">Born: </span>
+          <div className="space-y-2">
+            <p className="md:text-lg 2xl:text-xl text-neutral-200">
+              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">Born: </span>
               {character.born || "Unknown"}
             </p>
-            <p className="text-neutral-200">
-              <span className="font-got text-sm text-neutral-400">Died: </span>
+            <p className="md:text-lg 2xl:text-xl text-neutral-200">
+              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">Died: </span>
               {character.died || "Unknown"}
             </p>
-            <p className="text-neutral-200">
-              <span className="font-got text-sm text-neutral-400">
+            <p className="md:text-lg 2xl:text-xl text-neutral-200">
+              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">
                 Gender:{" "}
               </span>
               {character.gender || "Unknown"}
             </p>
-          </>
+          </div>
         ),
       }}
       index={index}
@@ -66,8 +68,8 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
   ));
 
   return (
-    <div className="w-full h-full px-8 py-10 bg-[#181818] z-10">
-      <h2 className="max-w-7xl text-xl md:text-5xl text-neutral-200 font-got">
+    <div className="w-full h-full px-6 md:px-10 lg:px-20 xl:px-32 bg-[#181818] z-10">
+      <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-neutral-200 font-got">
         Sworn Members
       </h2>
       <Carousel items={cards} />

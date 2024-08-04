@@ -53,7 +53,9 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
       }
     };
 
-    fetchData();
+    fetchData().catch((error) => {
+      console.error('Error during fetchHouseDetails call:', error);
+    });
   }, [infoDetails]);
 
   const renderList = (items: string[]) => (
@@ -80,41 +82,41 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
   );
 
   return (
-    <div className="w-full flex flex-col px-8 pt-10 pb-20 bg-[#181818] z-10">
-      <h2 className="max-w-7xl text-xl md:text-5xl text-neutral-200 font-got">
+    <div className="pb-20 w-full flex flex-col px-6 md:px-10 lg:px-20 xl:px-32 bg-[#181818] z-10">
+      <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-neutral-200 font-got">
         Info
       </h2>
-      <table className="w-full table-auto mt-8 font-serif text-neutral-200 border border-neutral-700 shadow-[0_5px_60px_5px_rgba(240,240,240,0.1)]">
+      <table className="w-full lg:w-11/12 2xl:10/12 self-center mt-8 font-serif text-neutral-200 border border-neutral-700 shadow-[0_5px_30px_2px_rgba(240,240,240,0.1)]">
         <tbody>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Titles
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {renderList(infoDetails.titles)}
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Seats
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {renderList(infoDetails.seats)}
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Coat of Arms
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {infoDetails.coatOfArms || "N/A"}
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Overlord
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {overlordName ? (
                 <a
                   href={`/houses/${infoDetails.overlord.split("/").pop()}`}
@@ -128,18 +130,18 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Founded
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {infoDetails.founded || "N/A"}
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Founder
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {founderName ? (
                 <a
                   href={`/characters/${infoDetails.founder.split("/").pop()}`}
@@ -153,26 +155,26 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Died Out
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {infoDetails.diedOut || "N/A"}
             </td>
           </tr>
           <tr>
-            <td className="border-b border-neutral-700 px-4 py-2 font-bold">
+            <td className="border-b md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Ancestral Weapons
             </td>
-            <td className="border-b border-l border-neutral-700 px-4 py-2">
+            <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
               {renderList(infoDetails.ancestralWeapons)}
             </td>
           </tr>
           <tr>
-            <td className="border-neutral-700 px-4 py-2 font-bold">
+            <td className="md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2 font-bold">
               Cadet Branches
             </td>
-            <td className="border-l border-neutral-700 px-4 py-2">
+            <td className="border-l md:text-lg 2xl:text-xl border-neutral-700 px-4 py-2">
               {renderLinks(cadetBranches)}
             </td>
           </tr>

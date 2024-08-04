@@ -18,12 +18,12 @@ const HouseList: React.FC = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleSearch(e.target.value);
+    handleSearch(e.target.value).catch(console.error);
   };
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleSearch(query);
+    handleSearch(query).catch(console.error);
   };
 
   return (
@@ -33,7 +33,7 @@ const HouseList: React.FC = () => {
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text- text-center text-pretty font-got text-slate-50">
             Game of Thrones
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-50 font-got">
+          <h2 className="text-xl sm:text-2xl md:text-5xl lg:text-6xl text-slate-50 font-got">
             House Wiki
           </h2>
         </div>

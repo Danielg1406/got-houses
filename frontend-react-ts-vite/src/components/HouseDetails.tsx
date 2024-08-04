@@ -6,7 +6,7 @@ import { SparklesCore } from "./ui/FireSparkles";
 import HouseName from "./HouseName";
 import HouseMembers from "./HouseMembers";
 import InfoTable from "./InfoTable";
-import HouseLeadership from "./ui/HouseLeadership";
+import HouseLeadership from "./HouseLeadership.tsx";
 
 const HouseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,13 +18,15 @@ const HouseDetails: React.FC = () => {
       setHouse(result);
     };
 
-    fetchHouseDetails();
+    fetchHouseDetails().catch((error) => {
+        console.error('Error during fetchHouseDetails call:', error);
+    });
   }, [id]);
 
   if (!house) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-[#181818] flex flex-col items-center text-slate-50 py-8 overflow-hidden">
+    <div className="min-h-screen bg-[#181818] flex flex-col justify-center items-center text-slate-50 py-8 overflow-hidden">
       <HouseName name={house.name} word={house.words} />
       <HouseRegion region={house.region} />
       <HouseLeadership currentLord={house.currentLord} heir={house.heir} />

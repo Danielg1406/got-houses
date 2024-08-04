@@ -40,7 +40,9 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
       }
     };
 
-    fetchData();
+    fetchData().catch((error) => {
+      console.error('Error during fetchHouseDetails call:', error);
+    });
   }, [currentLord, heir]);
 
   const lordName = lord?.name || "N/A";
@@ -49,14 +51,14 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
   const heirImage = heir ? "/brand.webp" : "/unknown.webp";
 
   return (
-    <div className="flex flex-col justify-center items-center relative w-full bg-[#181818] bg-no-repeat bg-center bg-cover pt-10 pb-20 px-8 z-2">
+    <div className="flex flex-col justify-center items-center relative w-full bg-[#181818] bg-no-repeat bg-center bg-cover z-2">
       <img
         src="/throne.webp"
         alt="image of the iron throne from game of thrones"
         className="absolute mx-auto align-center z-2 opacity-20"
       />
       <div className="flex flex-col z-10">
-        <h2 className="max-w-7xl text-xl text-left md:text-5xl text-neutral-200 font-got mb-8">
+        <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-left text-neutral-200 font-got mb-8">
           Leadership
         </h2>
         <div className="flex flex-col items-center">
@@ -64,20 +66,20 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
             <img
               src={lordImage}
               alt={lordName}
-              className="w-24 h-24 rounded-full border-2 border-neutral-700 mb-2"
+              className="w-28 h-28 lg:w-40 lg:h-40 rounded-full border-2 border-neutral-700 mb-2"
             />
-            <p className="text-lg font-serif text-neutral-200">{lordName}</p>
-            <p className="text-md font-serif text-[#D4AF37]">Current Lord</p>
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">{lordName}</p>
+            <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-serif text-[#D4AF37]">Current Lord</p>
           </div>
           <div className="w-px h-20 bg-neutral-200 my-4"></div>
           <div className="flex flex-col items-center">
             <img
               src={heirImage}
               alt={heirName}
-              className="w-24 h-24 rounded-full border-2 border-neutral-700 mb-2"
+              className="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-2 border-neutral-700 mb-2"
             />
-            <p className="text-lg font-serif text-neutral-200">{heirName}</p>
-            <p className="text-md font-serif text-neutral-400">Heir</p>
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">{heirName}</p>
+            <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-serif text-neutral-400">Heir</p>
           </div>
         </div>
       </div>
