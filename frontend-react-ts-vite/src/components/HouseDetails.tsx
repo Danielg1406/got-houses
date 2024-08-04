@@ -6,6 +6,7 @@ import { SparklesCore } from "./ui/FireSparkles";
 import HouseName from "./HouseName";
 import HouseMembers from "./HouseMembers";
 import InfoTable from "./InfoTable";
+import HouseLeadership from "./ui/HouseLeadership";
 
 const HouseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,6 +27,7 @@ const HouseDetails: React.FC = () => {
     <div className="min-h-screen bg-[#181818] flex flex-col items-center text-slate-50 py-8 overflow-hidden">
       <HouseName name={house.name} word={house.words} />
       <HouseInfoSection region={house.region} />
+      <HouseLeadership currentLord={house.currentLord} heir={house.heir} />
       <HouseMembers swornMembers={house.swornMembers} />
       <InfoTable infoDetails={house} />
       <div className="absolute bottom-0 w-full h-1/2 pointer-events-none z-0">

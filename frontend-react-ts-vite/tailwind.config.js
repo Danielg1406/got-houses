@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         home: "url('/dragon-eye.webp')",
+        throne: "url('/throne..webp')",
       },
       fontFamily: {
         got: ["Game of Thrones", "serif"],
