@@ -13,7 +13,4 @@ class HouseController(private val houseService: HouseService) {
 
     @GetMapping("/houses/{id}")
     fun getHouseDetails(@PathVariable id: Long) = houseService.getHouseDetails(id)
-
-    @GetMapping("/characters/{id}")
-    fun getCharacterDetails(@PathVariable id: Long) = houseService.getCharacterDetails(id)
 }
