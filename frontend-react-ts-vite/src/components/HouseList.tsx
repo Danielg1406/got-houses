@@ -40,6 +40,7 @@ const HouseList: React.FC = () => {
         <form onSubmit={handleFormSubmit} className="w-full max-w-screen-md">
           <HoverBorderGradient
             containerClassName="w-full"
+            as="div"
             aria-label="search box"
           >
             <input

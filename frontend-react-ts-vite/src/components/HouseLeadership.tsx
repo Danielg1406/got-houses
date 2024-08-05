@@ -54,7 +54,7 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
     <div className="flex flex-col py-12 xl:py-16 justify-center items-center relative w-full bg-[#181818] bg-no-repeat bg-center bg-cover z-2">
       <img
         src="/throne.webp"
-        alt="image of the iron throne from game of thrones"
+        alt="The iron throne from game of thrones"
         className="absolute mx-auto align-center z-2 opacity-20"
       />
       <div className="flex flex-col z-10">
@@ -65,7 +65,7 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
           <div className="flex flex-col items-center">
             <img
               src={lordImage}
-              alt={lordName}
+              alt={`black and white portrait photo of ${lordName}`}
               className="w-28 h-28 lg:w-40 lg:h-40 rounded-full border-2 border-neutral-700 mb-2"
             />
             <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">{lordName}</p>
@@ -75,7 +75,7 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
           <div className="flex flex-col items-center">
             <img
               src={heirImage}
-              alt={heirName}
+              alt={`black and white portrait photo of ${heirName}`}
               className="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-2 border-neutral-700 mb-2"
             />
             <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">{heirName}</p>
