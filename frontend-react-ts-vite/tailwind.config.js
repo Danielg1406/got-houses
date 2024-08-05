@@ -10,7 +10,7 @@ module.exports = {
       backgroundImage: {
         small: "url('/dragon-cellphone.webp')",
         medium: "url('/dragon-tablet.webp')",
-        large: "url('/dragon.webp')"
+        large: "url('/dragon.webp')",
       },
       fontFamily: {
         got: ["Game of Thrones", "serif"],

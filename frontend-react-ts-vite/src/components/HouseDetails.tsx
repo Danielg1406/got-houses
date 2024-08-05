@@ -20,14 +20,14 @@ const HouseDetails: React.FC = () => {
     };
 
     fetchHouseDetails().catch((error) => {
-        console.error('Error during fetchHouseDetails call:', error);
+      console.error("Error during fetchHouseDetails call:", error);
     });
   }, [id]);
 
   if (!house) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-[#181818] flex flex-col justify-center items-center text-slate-50 py-8 overflow-hidden">
+    <div className="min-h-screen bg-[#181818] flex flex-col justify-center items-center text-slate-50 pb-8 overflow-hidden">
       <HouseName name={house.name} word={house.words} />
       <HouseRegion region={house.region} />
       <HouseLeadership currentLord={house.currentLord} heir={house.heir} />
@@ -53,7 +53,7 @@ const HouseDetails: React.FC = () => {
           <span className="relative z-20">Back to search</span>
         </a>
       </div>
-        <BackButton/>
+      <BackButton />
     </div>
   );
 };

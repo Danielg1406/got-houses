@@ -33,7 +33,7 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
     };
 
     fetchData().catch((error) => {
-        console.error('Error during fetchHouseDetails call:', error);
+      console.error("Error during fetchHouseDetails call:", error);
     });
   }, [swornMembers]);
 
@@ -47,11 +47,15 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
         content: (
           <div className="space-y-2">
             <p className="md:text-lg 2xl:text-xl text-neutral-200">
-              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">Born: </span>
+              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">
+                Born:{" "}
+              </span>
               {character.born || "Unknown"}
             </p>
             <p className="md:text-lg 2xl:text-xl text-neutral-200">
-              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">Died: </span>
+              <span className="font-got text-md md:text-lg lg:text-xl xl:text-2xl text-neutral-400">
+                Died:{" "}
+              </span>
               {character.died || "Unknown"}
             </p>
             <p className="md:text-lg 2xl:text-xl text-neutral-200">

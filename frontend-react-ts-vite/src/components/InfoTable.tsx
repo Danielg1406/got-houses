@@ -54,7 +54,7 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
     };
 
     fetchData().catch((error) => {
-      console.error('Error during fetchHouseDetails call:', error);
+      console.error("Error during fetchHouseDetails call:", error);
     });
   }, [infoDetails]);
 
@@ -72,7 +72,7 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
         <li key={index}>
           <a
             href={`/houses/${house.url.split("/").pop()}`}
-            className="text-red-500 hover:underline"
+            className="text-neutral-200 underline hover:text-red-700"
           >
             {house.name}
           </a>
@@ -120,7 +120,7 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
               {overlordName ? (
                 <a
                   href={`/houses/${infoDetails.overlord.split("/").pop()}`}
-                  className="text-red-500 hover:underline"
+                  className="text-neutral-200 underline"
                 >
                   {overlordName}
                 </a>

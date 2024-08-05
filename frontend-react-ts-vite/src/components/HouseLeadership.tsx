@@ -41,7 +41,7 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
     };
 
     fetchData().catch((error) => {
-      console.error('Error during fetchHouseDetails call:', error);
+      console.error("Error during fetchHouseDetails call:", error);
     });
   }, [currentLord, heir]);
 
@@ -68,8 +68,12 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
               alt={`black and white portrait photo of ${lordName}`}
               className="w-28 h-28 lg:w-40 lg:h-40 rounded-full border-2 border-neutral-700 mb-2"
             />
-            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">{lordName}</p>
-            <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-serif text-[#D4AF37]">Current Lord</p>
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">
+              {lordName}
+            </p>
+            <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-serif text-[#D4AF37]">
+              Current Lord
+            </p>
           </div>
           <div className="w-px h-20 bg-neutral-200 my-4"></div>
           <div className="flex flex-col items-center">
@@ -78,8 +82,12 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
               alt={`black and white portrait photo of ${heirName}`}
               className="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-2 border-neutral-700 mb-2"
             />
-            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">{heirName}</p>
-            <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-serif text-neutral-400">Heir</p>
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-serif text-neutral-200">
+              {heirName}
+            </p>
+            <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-serif text-neutral-400">
+              Heir
+            </p>
           </div>
         </div>
       </div>
