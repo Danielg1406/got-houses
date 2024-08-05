@@ -142,16 +142,7 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
               Founder
             </td>
             <td className="border-b md:text-lg 2xl:text-xl border-l border-neutral-700 px-4 py-2">
-              {founderName ? (
-                <a
-                  href={`/characters/${infoDetails.founder.split("/").pop()}`}
-                  className="text-red-500 hover:underline"
-                >
-                  {founderName}
-                </a>
-              ) : (
-                "N/A"
-              )}
+              {founderName || "N/A"}
             </td>
           </tr>
           <tr>
