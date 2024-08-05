@@ -7,7 +7,7 @@ interface HouseRegionProps {
 
 const HouseRegion: React.FC<HouseRegionProps> = ({ region }) => {
   return (
-    <div className="flex flex-col justify-center px-6 md:px-10 lg:px-20 xl:px-32 w-full bg-[#181818] z-10">
+    <div className="flex flex-col justify-center pb-8 xl:pb-11 px-6 md:px-10 lg:px-20 xl:px-32 w-full bg-[#181818] z-10">
       <div className="flex flex-col">
         <motion.h2
           initial={{ opacity: 0, x: -100 }}

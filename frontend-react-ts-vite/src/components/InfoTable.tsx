@@ -82,7 +82,7 @@ const InfoTable: React.FC<InfoTableProps> = ({ infoDetails }) => {
   );
 
   return (
-    <div className="pb-20 w-full flex flex-col px-6 md:px-10 lg:px-20 xl:px-32 bg-[#181818] z-10">
+    <div className="py-10 w-full flex flex-col px-6 md:px-10 lg:px-20 xl:px-32 bg-[#181818] z-10">
       <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-neutral-200 font-got">
         Info
       </h2>

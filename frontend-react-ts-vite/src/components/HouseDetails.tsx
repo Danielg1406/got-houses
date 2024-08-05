@@ -43,10 +43,10 @@ const HouseDetails: React.FC = () => {
           particleColor="#7F1D1D"
         />
       </div>
-      <div className="z-10 bg-[#181818] w-full flex justify-center pb-8">
+      <div className="z-10 bg-[#181818] w-full flex justify-center pb-8 xl:pt-6">
         <a
           href="/"
-          className="px-8 py-2 rounded relative bg-transparent text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-neutral-600"
+          className="px-8 py-2 rounded relative bg-transparent text-neutral-200 text-md md:text-lg lg:text-xl xl:text-2xl font-serif hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-neutral-600"
         >
           <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-red-500 to-transparent" />
           <span className="relative z-20">Back to search</span>
