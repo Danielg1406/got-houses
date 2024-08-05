@@ -72,7 +72,10 @@ const HouseMembers: React.FC<HouseMembersProps> = ({ swornMembers }) => {
   ));
 
   return (
-    <div className="w-full h-full py-12 px-6 md:px-10 lg:px-20 xl:px-32 bg-[#181818] z-10">
+    <div
+      className="w-full h-full py-12 px-6 md:px-10 lg:px-20 xl:px-32 bg-[#181818] z-10"
+      tabIndex={0}
+    >
       <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-neutral-200 font-got">
         Sworn Members
       </h2>

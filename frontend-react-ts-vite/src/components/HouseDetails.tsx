@@ -6,8 +6,8 @@ import { SparklesCore } from "./ui/FireSparkles";
 import HouseName from "./HouseName";
 import HouseMembers from "./HouseMembers";
 import InfoTable from "./InfoTable";
-import HouseLeadership from "./HouseLeadership.tsx";
-import BackButton from "./ui/BackButton.tsx";
+import HouseLeadership from "./HouseLeadership";
+import BackButton from "./ui/BackButton";
 
 const HouseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();

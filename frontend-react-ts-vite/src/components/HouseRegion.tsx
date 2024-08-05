@@ -1,5 +1,4 @@
 import React from "react";
-// import { motion } from "framer-motion";
 
 interface HouseRegionProps {
   region: string;
@@ -7,7 +6,10 @@ interface HouseRegionProps {
 
 const HouseRegion: React.FC<HouseRegionProps> = ({ region }) => {
   return (
-    <div className="flex flex-col justify-center pb-8 xl:pb-11 px-6 md:px-10 lg:px-20 xl:px-32 w-full bg-[#181818] z-10">
+    <div
+      className="flex flex-col justify-center pt-4 pb-8 xl:pb-11 px-6 md:px-10 lg:px-20 xl:px-32 w-full bg-[#181818] z-10"
+      tabIndex={0}
+    >
       <div className="flex flex-col">
         <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-neutral-200 font-got mb-8">
           Region

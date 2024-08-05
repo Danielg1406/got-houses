@@ -51,7 +51,10 @@ const HouseLeadership: React.FC<HouseLeadershipProps> = ({
   const heirImage = heir ? "/heir.webp" : "/unknown.webp";
 
   return (
-    <div className="flex flex-col py-12 xl:py-16 justify-center items-center relative w-full bg-[#181818] bg-no-repeat bg-center bg-cover z-2">
+    <div
+      className="flex flex-col py-12 xl:py-16 justify-center items-center relative w-full bg-[#181818] bg-no-repeat bg-center bg-cover z-2"
+      tabIndex={0}
+    >
       <img
         src="/throne.webp"
         alt="The iron throne from game of thrones"
