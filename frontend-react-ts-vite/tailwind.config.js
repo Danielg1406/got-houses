@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        home: "url('/dragon-eye.webp')",
+        small: "url('/dragon-cellphone.webp')",
+        medium: "url('/dragon-tablet.webp')",
+        large: "url('/dragon.webp')"
       },
       fontFamily: {
         got: ["Game of Thrones", "serif"],

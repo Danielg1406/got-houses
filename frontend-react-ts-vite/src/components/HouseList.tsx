@@ -27,8 +27,8 @@ const HouseList: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-home bg-cover bg-no-repeat bg-center relative">
-      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-t from-[#000000] to-100% p-7 sm:p-12 z-10 relative">
+    <div className="min-h-screen bg-small md:bg-medium lg:bg-large bg-cover bg-no-repeat bg-center relative">
+      <div className="min-h-screen w-full flex flex-col items-center pt-40 space-y-5 bg-gradient-to-b from-[#000000] to-100% p-7 sm:p-12 z-10 relative">
         <div className="flex flex-col justify-center items-center w-full h-full py-4">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text- text-center text-pretty font-got text-slate-50">
             Game of Thrones

@@ -7,6 +7,7 @@ import HouseName from "./HouseName";
 import HouseMembers from "./HouseMembers";
 import InfoTable from "./InfoTable";
 import HouseLeadership from "./HouseLeadership.tsx";
+import BackButton from "./ui/BackButton.tsx";
 
 const HouseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -52,6 +53,7 @@ const HouseDetails: React.FC = () => {
           <span className="relative z-20">Back to search</span>
         </a>
       </div>
+        <BackButton/>
     </div>
   );
 };
