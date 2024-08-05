@@ -38,9 +38,9 @@ const HouseDetails: React.FC = () => {
           background="transparent"
           minSize={1.4}
           maxSize={1.8}
-          particleDensity={20}
+          particleDensity={15}
           className="w-full h-full"
-          particleColor="#7F1D1D"
+          particleColor="F85E11"
         />
       </div>
       <div className="z-10 bg-[#181818] w-full flex justify-center pb-8 xl:pt-6">
